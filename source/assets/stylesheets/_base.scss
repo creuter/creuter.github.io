@@ -1,0 +1,71 @@
+* {
+  @include box-sizing(border-box);
+}
+
+body {
+  @include margin(null auto);
+  @include padding(null 1em);
+  background-color: #fafaf8;
+  color: $base-font-color;
+  font-family: "ff-meta-serif-web-pro", $georgia;
+  line-height: 1.6;
+  max-width: $narrow-container-width;
+
+  @media screen and (min-width: 1441px) {
+    font-size: 1.125em;
+  }
+}
+
+a {
+  color: $link-color;
+  transition: color 0.1s linear;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: darken($link-color, 15%);
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+h1 {
+  @include margin($large-spacing null);
+  font-size: em(24);
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 0.8125em;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: $base-spacing;
+  text-transform: uppercase;
+}
+
+h3 {
+  @include margin(1.25em null 0.25em);
+  font-size: em(18);
+  font-weight: 400;
+}
+
+p {
+  @include margin(0 null $small-spacing);
+}
+
+ul {
+  padding-left: 1em;
+
+  @media screen and (min-width: ($narrow-container-width + 3em)) {
+    padding-left: 0;
+  }
+}
+
+footer {
+  @include padding($large-spacing null);
+  border-top: 1px solid #ddd;
+  margin-top: $large-spacing;
+}
